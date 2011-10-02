@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VVVV.SubGraphBuilder", "VVVV.SubGraphBuilder.csproj", "{54675BE5-F88C-489A-A009-9467E361B39E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VVVV.SubGraphBuilder.NodeTest", "VVVV.SubGraphBuilder.NodeTest\VVVV.SubGraphBuilder.NodeTest.csproj", "{0A3757F1-9A73-4910-9130-6974AF33968C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VVVV.SubGraphBuilder.Lib", "VVVV.SubGraphBuilder.Lib\VVVV.SubGraphBuilder.Lib.csproj", "{B6D99825-C969-4E68-9D83-A2238C95E29C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54675BE5-F88C-489A-A009-9467E361B39E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54675BE5-F88C-489A-A009-9467E361B39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54675BE5-F88C-489A-A009-9467E361B39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54675BE5-F88C-489A-A009-9467E361B39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3757F1-9A73-4910-9130-6974AF33968C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3757F1-9A73-4910-9130-6974AF33968C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3757F1-9A73-4910-9130-6974AF33968C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3757F1-9A73-4910-9130-6974AF33968C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D99825-C969-4E68-9D83-A2238C95E29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D99825-C969-4E68-9D83-A2238C95E29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D99825-C969-4E68-9D83-A2238C95E29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D99825-C969-4E68-9D83-A2238C95E29C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

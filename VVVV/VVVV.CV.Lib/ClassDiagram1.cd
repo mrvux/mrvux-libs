@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Output data is sent back to node output from Processor.&#xD;&#xA;Data is copied back on vvvv mainloop">
+    <Position X="1.156" Y="2.406" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Parameters are inputs which are needed from processor. They are cached from vvvv mainloop">
+    <Position X="3.156" Y="2.427" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Streams are data which only runs in the subgraph thread">
+    <Position X="4.969" Y="3.406" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Stream processor is the main interface to implement for any Filter">
+    <Position X="9.687" Y="2.26" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Stream Host provides any function required for processor">
+    <Position X="7.271" Y="0.604" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="VVVV.CV.Lib.DataTypes.OutputData&lt;T&gt;" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAABAAAABAAEAgAAQAAAAA=</HashCode>
+      <FileName>DataTypes\Outputs\OutputData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.617" />
+  </Class>
+  <Class Name="VVVV.CV.Lib.DataTypes.Parameter&lt;T&gt;" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAABAAAAAAAAAAAAAAAABAAAABAAEAgAAAAAAAA=</HashCode>
+      <FileName>DataTypes\Parameters\Parameter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VVVV.CV.Lib.Host.StreamHostNode">
+    <Position X="7.25" Y="3.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQQAAIAAAAAAAAAAAAAAgBAAACQAAAABAgAAAAAAAA=</HashCode>
+      <FileName>Host\StreamHostNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VVVV.CV.Lib.DataTypes.InputStream&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAAAAAAIAAAgAAIAAAAAAARAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataTypes\Streams\InputStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VVVV.CV.Lib.DataTypes.OutputStream&lt;T&gt;">
+    <Position X="5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEAAAABAAAAAAAAAQAAAAAABAAAAAQAAAAAAA=</HashCode>
+      <FileName>DataTypes\Streams\OutputStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="VVVV.CV.Lib.DataTypes.IOutputData">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>DataTypes\Outputs\IOutputData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VVVV.CV.Lib.DataTypes.IParameter">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataTypes\Parameters\IParameter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VVVV.CV.Lib.Interfaces.IStreamProcessor">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Interfaces\IStreamProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VVVV.CV.Lib.Host.IStreamHost">
+    <Position X="7.25" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Host\IStreamHost.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="VVVV.CV.Lib.DataTypes.IBaseStream" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataTypes\Streams\IBaseStream.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
