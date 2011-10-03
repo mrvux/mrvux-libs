@@ -17,7 +17,6 @@ namespace VVVV.CV.Nodes
         private IStreamHost host;
 
         private Parameter<string> path;
-        private string oldpath = String.Empty;
         
         private OutputStream<ImageStream> to;
 
@@ -34,7 +33,7 @@ namespace VVVV.CV.Nodes
 
         public void Process()
         {
-            if (oldpath != this.path.Data[0])
+            if (this.path.IsChanged)
             {
                 if (this.to.Data.Image != null)
                 {
@@ -43,14 +42,13 @@ namespace VVVV.CV.Nodes
 
                 try
                 {
-                    this.to.Data.Image = new Emgu.CV.Image<Gray, Byte>(this.path.Data[0]);
+                    this.to.Data.Image = new Emgu.CV.Image<Bgr, Byte>(this.path.Data[0]);
                 }
                 catch
                 {
                     this.to.Data.Image = null;
                 }
             }
-            this.oldpath = this.path.Data[0];
         }
         #endregion
 

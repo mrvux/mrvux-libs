@@ -63,11 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileTest1.cs" />
+    <Compile Include="GrayScaleFilter.cs" />
     <Compile Include="InfoTest1.cs" />
-    <Compile Include="SinkTest1.cs" />
-    <Compile Include="SourceTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWindow1.cs" />
+    <Compile Include="ThresholdFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VVVV.CV.Factories\VVVV.CV.Factories.csproj">

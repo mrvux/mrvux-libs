@@ -29,16 +29,14 @@ namespace VVVV.CV.Nodes
 
             this.frm = new Form();
             this.frm.Show();
-            frm.Paint += new PaintEventHandler(frm_Paint);
-
-           
+            frm.Paint += new PaintEventHandler(frm_Paint);           
         }
 
         void frm_Paint(object sender, PaintEventArgs e)
         {
             if (b != null)
             {
-                e.Graphics.DrawImage(b, 0, 0);
+                e.Graphics.DrawImage(b, 0, 0, this.frm.Width, this.frm.Height);
             }
         }
 

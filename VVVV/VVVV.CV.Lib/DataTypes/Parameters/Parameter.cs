@@ -13,11 +13,13 @@ namespace VVVV.CV.Lib.DataTypes
     {
         private IPluginHost host;
 
-        private ISpread<T> internaldata;
+        private IDiffSpread<T> internaldata;
 
         private List<T> cache;
 
         private object m_lock = new object();
+
+        private bool haschanged = true;
 
         internal Parameter(IPluginHost host, string name)
         {
@@ -25,15 +27,24 @@ namespace VVVV.CV.Lib.DataTypes
 
             InputAttribute attr = new InputAttribute(name);
 
-            this.internaldata = PinFactory.CreateSpread<T>(host, attr);
+            this.internaldata = PinFactory.CreateDiffSpread<T>(host, attr);
 
             this.CacheData();
+        }
+
+        public bool IsChanged
+        {
+            get { return this.haschanged; }
         }
 
        
         public List<T> Data
         {
-            get { return this.cache; }
+            get 
+            {
+                this.haschanged = false;
+                return this.cache; 
+            }
         }
 
         /// <summary>
@@ -42,9 +53,13 @@ namespace VVVV.CV.Lib.DataTypes
         /// </summary>
         public void CacheData()
         {
-            lock (this.m_lock)
+            if (this.internaldata.IsChanged)
             {
-                this.cache = new List<T>(this.internaldata);
+                lock (this.m_lock)
+                {
+                    this.cache = new List<T>(this.internaldata);
+                }
+                this.haschanged = true;
             }
         }
     }

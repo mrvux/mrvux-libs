@@ -58,12 +58,9 @@ namespace VVVV.Hosting.Factories
         public StreamProcessorFactory(CompositionContainer parentContainer,IHDEHost hdeHost)
             : this(parentContainer, ".dll")
         {
-            this.graphbuilder = new viGraphBuilder2<IStreamProcessor>(hdeHost);
-            
-            this.graphbuilder.RegisterPinType<InternalStream<DoubleStream>>();
+            this.graphbuilder = new viGraphBuilder2<IStreamProcessor>(hdeHost);         
             this.graphbuilder.RegisterPinType<InternalStream<ImageStream>>();
-            
-            
+                        
             this.graphbuilder.NodeAdded += new NodeEventDelegate(graphbuilder_NodeAdded);
             this.graphbuilder.NodeRemoved += new NodeEventDelegate(graphbuilder_NodeRemoved);
             this.graphbuilder.LinkAdded += new LinkEventDelegate(graphbuilder_LinkAdded);
@@ -148,8 +145,7 @@ namespace VVVV.Hosting.Factories
             var filter = (IStreamProcessor)Activator.CreateInstance((Type)nodeInfo.UserData);
 
             var node = new StreamHostNode(pluginHost);
-
-
+            
             node.SetProcessor(filter);
             pluginHost.Plugin = node;
 
@@ -197,9 +193,9 @@ namespace VVVV.Hosting.Factories
                 nodeInfo.Factory = this;
                 nodeInfo.Type = NodeType.Plugin;
                 nodeInfo.UserData = t;
-
                 nodeInfo.CommitUpdate();
                 nodeInfo.UserData = t;
+                nodeInfo.AutoEvaluate = true;
                 nodeInfos.Add(nodeInfo);
             }
 

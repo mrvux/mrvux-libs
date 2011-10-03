@@ -80,7 +80,6 @@
     <Compile Include="DataTypes\Parameters\IParameter.cs" />
     <Compile Include="DataTypes\Parameters\Parameter.cs" />
     <Compile Include="DataTypes\Streams\BaseInputStream.cs" />
-    <Compile Include="DataTypes\Streams\Data\IDoubleStream.cs" />
     <Compile Include="DataTypes\Streams\Data\ImageStream.cs" />
     <Compile Include="DataTypes\Streams\IBaseStream.cs">
       <SubType>Code</SubType>
