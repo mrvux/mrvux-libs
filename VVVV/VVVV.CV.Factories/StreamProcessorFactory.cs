@@ -181,30 +181,42 @@ namespace VVVV.Hosting.Factories
 
         protected void LoadNodeInfosFromFile(string filename, string sourcefilename, ref List<INodeInfo> nodeInfos, bool commitUpdates)
         {
-            var assembly = Assembly.LoadFrom(filename);
-
-            this.filterlocator.Scan(assembly);
-
-            foreach (string key in this.filterlocator.RegisteredTypes.Keys)
+            Assembly assembly = null;
+            try
             {
-                Type t = this.filterlocator.RegisteredTypes[key];
-                var nodeInfo = FNodeInfoFactory.CreateNodeInfo(key, "Imaging", String.Empty, filename, true);
-                nodeInfo.Arguments = Assembly.GetExecutingAssembly().Location.ToLower();
-                nodeInfo.Factory = this;
-                nodeInfo.Type = NodeType.Plugin;
-                nodeInfo.UserData = t;
-                nodeInfo.CommitUpdate();
-                nodeInfo.UserData = t;
-                nodeInfo.AutoEvaluate = true;
-                nodeInfos.Add(nodeInfo);
+                assembly = Assembly.LoadFrom(filename);
+            } catch
+            {
+                assembly = null;
             }
 
-            foreach (var nodeInfo in nodeInfos)
+            if (assembly != null)
             {
-                nodeInfo.Factory = this;
-                if (commitUpdates)
+                this.filterlocator.Scan(assembly);
+
+                foreach (string key in this.filterlocator.RegisteredTypes.Keys)
+                {
+                    Type t = this.filterlocator.RegisteredTypes[key];
+                    var nodeInfo = FNodeInfoFactory.CreateNodeInfo(key, "Imaging", String.Empty, filename, true);
+                    nodeInfo.Arguments = Assembly.GetExecutingAssembly().Location.ToLower();
+                    nodeInfo.Factory = this;
+                    nodeInfo.Type = NodeType.Plugin;
+                    nodeInfo.UserData = t;
                     nodeInfo.CommitUpdate();
+                    nodeInfo.UserData = t;
+                    nodeInfo.AutoEvaluate = true;
+                    nodeInfos.Add(nodeInfo);
+                }
+
+                foreach (var nodeInfo in nodeInfos)
+                {
+                    nodeInfo.Factory = this;
+                    if (commitUpdates)
+                        nodeInfo.CommitUpdate();
+                }
             }
+
+                
         }
         #endregion
 
